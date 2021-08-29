@@ -41,6 +41,7 @@ jobs:
       - run:
           name: Frontend test
           command: |
+            npm install -g karma-cli
             CHROME_BIN=/usr/bin/google-chrome karma start --single-run
             cd ~/project/app
             npm run test
@@ -66,10 +67,10 @@ jobs:
       - run:
           name: Lint Dockerfile
           command: |
-            wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64
+            sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64
             sudo chmod +x /bin/hadolint
             cd ~/project/
-            hadolint Dockerfile
+            sudo hadolint Dockerfile
 
   build-docker-image:
     docker:
