@@ -24,10 +24,6 @@ spec:
       containers:
         - name: udacityproject
           image: sakshikst/udacityproject
-          command: [
-            "/bin/bash",
-            "npm run start"
-          ]
           ports:
           - containerPort: 80
           livenessProbe:

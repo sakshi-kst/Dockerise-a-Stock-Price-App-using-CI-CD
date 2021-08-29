@@ -15,4 +15,4 @@ RUN npm install &&\
 
 ## Step 4:
 # Run application at container launch
-CMD ["/bin/bash", "npm run start"]
+CMD ["/bin/bash", "-c", "npm run start"]
