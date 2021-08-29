@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Frontend test
           command: |
-            npm install -g karma-cli
+            sudo npm install -g karma-cli
             CHROME_BIN=/usr/bin/google-chrome karma start --single-run
             cd ~/project/app
             npm run test
