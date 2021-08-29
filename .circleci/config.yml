@@ -30,20 +30,6 @@ jobs:
           command: |
             cd ~/project/app
             npm run lint
-
-  test-frontend:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - checkout
-      - restore_cache:
-          keys: [frontend-build]
-      - run:
-          name: Frontend test
-          command: |
-            CHROME_BIN=/usr/bin/google-chrome
-            cd ~/project/app
-            npm run e2e
             
   scan-frontend:
     docker:
@@ -101,10 +87,8 @@ workflows:
       - build-frontend
       - lint-frontend:
           requires: [build-frontend]
-      - test-frontend:
-          requires: [build-frontend]
       - scan-frontend:
-          requires: [test-frontend]
+          requires: [build-frontend]
       - lint-dockerfile
       - build-docker-image:
           requires: [lint-dockerfile, lint-frontend, scan-frontend]
