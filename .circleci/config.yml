@@ -102,8 +102,8 @@ jobs:
       - run:
           name: Smoke test
           command: |
-            URL="https://a70a7bb46cea246819cf5768a225814b-1902548512.us-east-2.elb.amazonaws.com:80"
-            curl -k ${URL}
+            URL="http://a70a7bb46cea246819cf5768a225814b-1902548512.us-east-2.elb.amazonaws.com:80"
+            curl ${URL}
 
   rollout:
     docker:
