@@ -96,6 +96,4 @@ jobs:
 workflows:
   default:
     jobs:
-      - build-upload-docker-image
-      - deploy-to-k8s:
-          requires: [build-upload-docker-image]
+      - deploy-to-k8s
