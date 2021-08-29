@@ -103,7 +103,7 @@ jobs:
           name: Smoke test
           command: |
             URL="http://a70a7bb46cea246819cf5768a225814b-1902548512.us-east-2.elb.amazonaws.com:80"
-            curl -s ${URL} | grep "StockMarket"
+            curl ${URL}
 
   rollout:
     docker:
