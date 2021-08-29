@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
 
   constructor(private httpClient: HttpClient) {}
 
@@ -17,10 +17,10 @@ export class DashboardComponent implements OnInit{
   displayData() {
     const url = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-summary?region=IN&language=en';
     const headers = new HttpHeaders({'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-    'x-rapidapi-key': '27a54e9ba6msh718b7fee6da4c49p1342bbjsn4b375822cb79', 'useQueryString': 'true'});
+    'x-rapidapi-key': '27a54e9ba6msh718b7fee6da4c49p1342bbjsn4b375822cb79', useQueryString: 'true'});
 
-    this.httpClient.get(url, {headers: headers}).subscribe(
-        (data) => {          
+    this.httpClient.get(url, {headers}).subscribe(
+        (data) => {
           const BSE = data['marketSummaryResponse']['result']['0'];
           const bseString = '<span style="color:black;"> Exchange name: </span>' + BSE['fullExchangeName'] + '<br>' +
           '<span style="color:black;"> Market time: </span>' + BSE['regularMarketTime']['fmt'] + '<br>' +
