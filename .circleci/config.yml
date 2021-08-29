@@ -65,8 +65,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            cd ~/project/
-            ./run_docker.sh
+            sudo ~/project/run_docker.sh
 
   upload-docker-image:
     docker:
@@ -76,8 +75,7 @@ jobs:
       - run:
           name: Upload Docker image
           command: |
-            cd ~/project/
-            ./upload_docker.sh
+            sudo ~/project/upload_docker.sh
 
   
             
