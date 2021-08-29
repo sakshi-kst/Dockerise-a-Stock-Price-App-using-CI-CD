@@ -41,6 +41,7 @@ jobs:
       - run:
           name: Frontend test
           command: |
+            CHROME_BIN=/usr/bin/google-chrome karma start --single-run
             cd ~/project/app
             npm run test
             
