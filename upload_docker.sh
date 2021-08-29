@@ -10,7 +10,6 @@ dockerpath=sakshikst/udacityproject
 # Step 2:  
 # Authenticate & tag
 docker login -u sakshikst -p $password
-# Gap@1998@
 echo "Docker ID and Image: $dockerpath"
 docker tag udacityproject $dockerpath
 
