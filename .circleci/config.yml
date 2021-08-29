@@ -75,9 +75,27 @@ jobs:
             docker tag udacityproject $dockerpath
             docker push $dockerpath
 
+  deploy-to-k8s:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - run:
+          name: Deploy image to Kubernetes
+          command: |
+            aws eks --region us-east-2 update-kubeconfig --name sakshiudacity 
+            kubectl config use-context arn:aws:eks:us-east-2:035491818280:cluster/sakshiudacity 
+            kubectl apply -f deployment.yaml
+            kubectl get nodes
+            kubectl get deployments
+            kubectl get pod -o wide
+            kubectl get service/sakshiudacity
+
 
 
 workflows:
   default:
     jobs:
       - build-upload-docker-image
+      - deploy-to-k8s:
+          requires: [build-upload-docker-image]
