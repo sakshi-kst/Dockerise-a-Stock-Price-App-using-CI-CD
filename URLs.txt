@@ -1,7 +1,5 @@
-URL01
-- Public URL for S3 Bucket/Green frontend: http://udapeople-08531e5.s3.us-east-2.amazonaws.com/index.html
+Public URL for Green frontend: http://udapeople-08531e5.s3.us-east-2.amazonaws.com/index.html
 
-URL02
-- Public URL for CloudFront distribution/Blue frontend: http://d2d8aao3ug2aiq.cloudfront.net/
+Public URL for Blue frontend: http://d2d8aao3ug2aiq.cloudfront.net/
 
-URL for CircleCI: https://app.circleci.com/pipelines/github/sakshi-kst/Give-your-Application-Auto-Deploy-Superpowers
+URL for CircleCI: https://github.com/sakshi-kst/Dockerise-a-Stock-Price-App-using-CI-CD
