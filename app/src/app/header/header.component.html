@@ -1,0 +1,20 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<mat-toolbar color="primary">
+    <img src="https://developers.giphy.com/branch/master/icons/icon-48x48.png?v=7f0a8f0ba9ed9e42ddba636b7ef9690c" alt="Stockify Logo">
+    <h1 routerLink="/dashboard">Stockify</h1>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Choose stock</mat-label>
+        <mat-select>
+          <mat-option value="NWG" routerLink="/stockDetail" [queryParams]="{stock:'NWG'}">NatWest Group</mat-option>
+          <mat-option value="ICICI" routerLink="/stockDetail" [queryParams]="{stock:'ICICIBANK.NS'}">ICICI Bank</mat-option>
+          <mat-option value="SBI" routerLink="/stockDetail" [queryParams]="{stock:'SBIN.NS'}">State Bank of India</mat-option>
+          <mat-option value="KOTAK" routerLink="/stockDetail" [queryParams]="{stock:'KOTAKBANK.NS'}">Kotak Bank</mat-option>
+          <mat-option value="NIIT" routerLink="/stockDetail" [queryParams]="{stock:'NIITLTD.NS'}">NIIT LTD</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <i class="fa fa-search" aria-hidden="true"></i>
+</mat-toolbar>

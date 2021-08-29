@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udacityproject
+  labels:
+    app: udacityproject
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: udacityproject
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 60
+  progressDeadlineSeconds: 600
+  template:
+    metadata:
+      labels:
+        app: udacityproject
+    spec:
+      containers:
+        - name: udacityproject
+          image: sakshikst/udacityproject
+          ports:
+          - containerPort: 80
+          livenessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /
+              scheme: HTTP
+              port: 80
+            successThreshold: 1
+            periodSeconds: 30
+            failureThreshold: 3
+            timeoutSeconds: 10

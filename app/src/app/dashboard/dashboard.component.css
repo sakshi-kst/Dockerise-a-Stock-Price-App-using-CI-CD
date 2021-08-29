@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(222, 194, 241);
+    text-align: center;
+    height: fit-content;
+}
+
+.nse-bse-container {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+    color:#3f51b5;
+}
+
+.se {
+    border: 0.2em solid #3f51b5;
+    border-radius: 20%;
+	padding: 2em;
+}
+
+.se-image img {
+    mix-blend-mode: multiply;
+    height: 20vh;
+    width: 25vw;
+}
+
+#descriptionBSE, #descriptionNSE {
+    padding-top: 5vh;
+    font-size: 1.3em;
+}

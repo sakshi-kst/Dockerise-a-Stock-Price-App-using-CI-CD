@@ -1,17 +1,7 @@
 URL01
-- Public Url to GitHub repository: https://github.com/sakshi-kst/Give-your-Application-Auto-Deploy-Superpowers
-
-URL02
 - Public URL for S3 Bucket/Green frontend: http://udapeople-08531e5.s3.us-east-2.amazonaws.com/index.html
 
-URL03
+URL02
 - Public URL for CloudFront distribution/Blue frontend: http://d2d8aao3ug2aiq.cloudfront.net/
 
-URL04
-- Public URLs to Deployed application Backend in EC2: http://ec2-18-191-205-230.us-east-2.compute.amazonaws.com:3030/api/status
-
-URL05
-- Public URL to Prometheus Server: http://ec2-3-137-222-242.us-east-2.compute.amazonaws.com:9090
-
-
-Please find all the 12 screenshots in the folder named 'Screenshots'.
+URL for CircleCI: https://app.circleci.com/pipelines/github/sakshi-kst/Give-your-Application-Auto-Deploy-Superpowers

@@ -1,0 +1,19 @@
+mat-toolbar {
+    height: 12vh;
+}
+
+h1 {
+    padding: 1vw 1vh;
+    text-shadow: 5px 5px 5px indianred;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+mat-form-field {
+    margin-left: 60vw;
+}
+
+.fa-search {
+    cursor: pointer;
+    margin-left: 2vw;
+}
