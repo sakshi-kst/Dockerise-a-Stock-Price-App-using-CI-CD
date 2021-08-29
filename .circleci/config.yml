@@ -88,7 +88,7 @@ jobs:
             chmod +x ./kubectl
             mv ./kubectl /usr/local/bin/kubectl
             kubectl config use-context arn:aws:eks:us-east-2:035491818280:cluster/sakshiudacity 
-            kubectl apply -f /home/circleci/project/deployment.yaml
+            kubectl apply -f ~/project/deployment.yml
             kubectl get nodes
             kubectl get deployments
             kubectl get pod -o wide
