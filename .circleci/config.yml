@@ -98,7 +98,7 @@ workflows:
   default:
     jobs:
       - build-frontend
-      - lint-frontend
+      - lint-frontend:
           requires: [build-frontend]
       - test-frontend:
           requires: [build-frontend]
