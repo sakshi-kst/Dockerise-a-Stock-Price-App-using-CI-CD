@@ -92,7 +92,7 @@ jobs:
             kubectl get nodes
             kubectl get deployments
             kubectl get pod -o wide
-            kubectl get service/sakshiudacity
+            kubectl get service/udacityproject
 
 
 
