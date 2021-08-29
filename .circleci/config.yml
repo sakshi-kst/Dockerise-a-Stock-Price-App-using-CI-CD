@@ -65,7 +65,9 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            sudo ~/project/run_docker.sh
+            cd ~/project/
+            ls
+            sudo ./run_docker.sh
 
   upload-docker-image:
     docker:
@@ -82,13 +84,6 @@ jobs:
 workflows:
   default:
     jobs:
-      - build-frontend
-      - lint-frontend:
-          requires: [build-frontend]
-      - scan-frontend:
-          requires: [build-frontend]
-      - lint-dockerfile
-      - build-docker-image:
-          requires: [lint-dockerfile, lint-frontend, scan-frontend]
+      - build-docker-image
       - upload-docker-image:
           requires: [build-docker-image]
