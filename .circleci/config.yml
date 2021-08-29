@@ -66,8 +66,8 @@ jobs:
           name: Build Docker image
           command: |
             cd ~/project/
-            ls
-            sudo ./run_docker.sh
+            chmod +x run_docker.sh
+            sudo bash run_docker.sh
 
   upload-docker-image:
     docker:
