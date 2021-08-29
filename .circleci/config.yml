@@ -102,7 +102,7 @@ workflows:
       - scan-frontend:
           requires: [test-frontend]
       - lint-dockerfile
-      - build-docker-image
+      - build-docker-image:
           requires: [lint-dockerfile, lint-frontend, scan-frontend]
-      - upload-docker-image
+      - upload-docker-image:
           requires: [build-docker-image]
