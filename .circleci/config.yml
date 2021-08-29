@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Frontend test
           command: |
-            export PATH=$PATH:/usr/local/lib/node_modules/karma/bin
+            export PATH=$PATH:~/project/app/node_modules/karma/bin
             CHROME_BIN=/usr/bin/google-chrome karma start --single-run
             cd ~/project/app
             npm run test
