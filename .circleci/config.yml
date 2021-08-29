@@ -94,9 +94,36 @@ jobs:
             kubectl get pod -o wide
             kubectl get service/udacityproject
 
+  smoke-test:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --update curl
+      - run:
+          name: Smoke test
+          command: |
+            URL="http://a70a7bb46cea246819cf5768a225814b-1902548512.us-east-2.elb.amazonaws.com:80"
+            curl -s ${URL} | grep "StockMarket"
 
+  rollout:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - run:
+          name: Rollout app
+          command: |
+            kubectl rollout status deployments/udacityproject
 
 workflows:
   default:
     jobs:
       - deploy-to-k8s
+      - smoke-test:
+          requires: [deploy-to-k8s]
+      - rollout:
+          requires: [smoke-test]
