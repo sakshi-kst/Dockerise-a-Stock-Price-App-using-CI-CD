@@ -42,9 +42,7 @@ jobs:
           name: Frontend test
           command: |
             cd ~/project/app
-            export PATH=$PATH:~/project/app/node_modules/karma/bin
-            CHROME_BIN=/usr/bin/google-chrome karma start --single-run
-            npm run test
+            npm run e2e
             
   scan-frontend:
     docker:
