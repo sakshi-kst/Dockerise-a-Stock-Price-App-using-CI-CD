@@ -44,7 +44,7 @@ jobs:
             export PATH=$PATH:~/project/app/node_modules/karma/bin
             CHROME_BIN=/usr/bin/google-chrome karma start --single-run
             cd ~/project/app
-            npm run test
+            npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
             
   scan-frontend:
     docker:
